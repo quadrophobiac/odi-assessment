@@ -22,17 +22,23 @@ search by date (in human readable format on the command line) – error catching
 set of dummy transactions – in what type of database to store this data?  
 - Storing it in a JSON file is the easiest  
 
+### Unimplemented Features
+
+Login  
+wrapping code as a command line tool (https://github.com/davetron5000/methadone  http://whatisthor.com
+
+
 ### Documentation of decisions taken
 
-### No GUI
+#### No GUI
 
 no gui was stipulated so I used ruby rather than employing a web framework because such frameworks would be superfluous here. However were this code to be implemented on a live application then better security for the log in would be required
 
-####Choice of data persistence
+#####Choice of data persistence
 
 I do not have experience of building transaction software, so to get a sense of what format to store this data in I did some research. It seemed that Magento, Paypal and Mastercard eCommerce APIs were built with JSON objects in mind. As such I chose to use a **document based database** rather than a relational database
 
-####Modelling the classes
+#####Modelling the classes
 
 The brief stipulates that **Organisations** and **People** would be utilising the system  
 
@@ -42,7 +48,7 @@ By utilising MongoId as a wrapper for a local MongoDB I gained access to the ODM
 * expedite the relations between the client and transactions classes and persistence of data
 * make the querying of the date (stored as YYYY-MM-DD in the specifications) and presentation of the matching data entries legible in human readable format with a minimum of hassle
 
-#### Important Changelogs to Note in that Regard
+##### Important Changelogs to Note in that Regard
 
 If I assign the transactions a Dr/Cr boolean for the sake of expediency is there any point persisting with using a many-to-many in the MongoDB https://github.com/quadrophobiac/odi-assessment/commit/d2bda9c2182d74274c4e65db2e6a0da5911b4bf4
 
