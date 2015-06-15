@@ -3,8 +3,8 @@
 
 ###Installation
 
-This code avails of a mongoDB database in its development
-
+This code avails of a mongoDB database in its development  
+I should have attempted it with a relational database instead  
 
 ###Requirements
 
