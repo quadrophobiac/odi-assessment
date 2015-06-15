@@ -5,6 +5,7 @@
 
 This code avails of a mongoDB database in its development
 
+
 ###Requirements
 
 both people and organisations – as strings  
@@ -23,11 +24,19 @@ set of dummy transactions – in what type of database to store this data?
 
 ### Documentation of decisions taken
 
+### No GUI
+
+no gui was stipulated so I used ruby rather than employing a web framework because such frameworks would be superfluous here. However were this code to be implemented on a live application then better security for the log in would be required
+
 ####Choice of data persistence
 
 I do not have experience of building transaction software, so to get a sense of what format to store this data in I did some research. It seemed that Magento, Paypal and Mastercard eCommerce APIs were built with JSON objects in mind. As such I chose to use a **document based database** rather than a relational database
 
 ####Modelling the classes
+
+The brief stipulates that **Organisations** and **People** would be utilising the system  
+
+I have preferred to write a generic customer class which could be at a later point extended via subclasses 'Personal' and 'Organisation'. There is nothing in the brief that would distinguish People and Organisation from one another in terms of the behaviour the system would monitor  
 
 By utilising MongoId as a wrapper for a local MongoDB I gained access to the ODM mapping methods which were employed to  
 * expedite the relations between the client and transactions classes and persistence of data
