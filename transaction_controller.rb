@@ -17,7 +17,11 @@ class TransactionController
     exchange.save()
   end
 
-  def getBalance(username, date)
+  def getBalance(username, year, month, day)
     # aim of this is what is the balance on a given date
+
+    #establish date span
+    Transaction.between(date: (Transaction.first.date..ChosenDate)).count
+    # transaction.first catches the first transaction, not the most chronologically distant
   end
 end
