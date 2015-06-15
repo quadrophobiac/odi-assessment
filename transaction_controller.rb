@@ -15,11 +15,11 @@ class TransactionController
 
   end
 
-  def getBalance()
+  def getBalance(username)
 
   end
 
-  def getBalance(date)
+  def getBalance(username, date)
 
   end
 end
