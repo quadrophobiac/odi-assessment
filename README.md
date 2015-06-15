@@ -1,14 +1,18 @@
 ## ODI Test Code Assignment
 ===============================
 
-Requirements
+###Installation
+
+This code avails of a mongoDB database in its development
+
+###Requirements
 
 both people and organisations – as strings  
-generic client class:  
+**generic client class**:  
     attributes = name, password
     methods = transfer(payee), 
     getBalance() [printToScreen in ledger format] balance as double
-transaction class  
+**transaction class**  
     belongs to many clients?
     or 2 types of transaction (dr and cr)
 log in and all attendant security (caveat in commit comment that a supermarket would require better security)??  
