@@ -11,8 +11,10 @@ class TransactionController
     date = Date.new(date)
 
     # # psuedocode for now
-    # payeeId = Customer.where(name: payee).only(:_id).map(:_id)
-    # payerId = Customer.where(name: payer).only(:_id).map(:_id)
+    payeeId = Customer.where(name: payee).distinct(:_id).as_json
+    payeeId = payeeId[0]["$oid"]
+    payerId = Customer.where(name: payer).distinct(:_id).as_json
+    payerId = payerId[0]["$oid"]
     # Transaction.create(amount: amount, date: date, CrDr: credit, [customer_ids])
 
   end
