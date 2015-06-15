@@ -8,6 +8,8 @@ class TransactionController
   def transfer(payer, payee, amount, date, credit)
     # e.g. String "stephen", amount as float, and date in someformat
 
+    date = Date.new(date)
+
     # # psuedocode for now
     # payeeId = Customer.where(name: payee).find(_id)
     # payerId = Customer.where(name: payer).find(_id)
