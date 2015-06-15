@@ -10,7 +10,7 @@ class TransactionController
 
     # # psuedocode for now
     # payeeId = Customer.where(name: payee).find(_id)
-    # payerId = Customer.where(name: payee).find(_id)
+    # payerId = Customer.where(name: payer).find(_id)
     # Transaction.create(amount: amount, date: date, CrDr: credit, [customer_ids])
 
   end
@@ -26,8 +26,7 @@ class TransactionController
   end
 
   def getBalance(username, date)
-
-
+    # aim of this is what is the balance on a given date
 
   end
 end
