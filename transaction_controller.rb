@@ -5,22 +5,18 @@ Mongoid::Config.load!('./mongoid.yml', :development)
 
 class TransactionController
 
-  def transfer(payer, payee, amount, credit)
+  def transfer(payer, payee, amount)
     # e.g. String "payee/payer", amount as float, and date in someformat, date must be in YYYY, MM DD
     # alternative - pass an object as reference
 
     # date = Date.new(date)
 
-    # # psuedocode for now
-    # payeeId = Customer.where(name: payee).distinct(:_id).as_json
-    # payeeId = payeeId[0]["$oid"]
-    # payerId = Customer.where(name: payer).distinct(:_id).as_json
-    # payerId = payerId[0]["$oid"]
-    # Transaction.create(amount: amount, date: date, CrDr: credit, [customer_ids])
-
-    # Transaction.create(amount: amount, [customer_id: payer._id, payee._id ])
-    payer.transactions.create(amount: amount, CrDr: credit)
-    # this method creates a transaction instance anew everytime, ergo the two way association isn't easy
+    exchange  = Transaction.new(amount: amount, recipient: payee.name)
+    exchange.customers.push(payer)
+    if payer._id != payee._id then
+      exchange.customers.push(payee)
+    end
+    exchange.save()
 
 
   end
