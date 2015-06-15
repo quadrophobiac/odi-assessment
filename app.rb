@@ -19,9 +19,9 @@ require './transaction_controller'
 # login loop
 
 # create some accounts
-
-stephen = new Customer(name: "stephen", password: "password")
-supervalu = new Customer(name: "supervalu", password: "password")
+# if not exists ...
+stephen = Customer.new(name: "stephen", password: "password")
+supervalu = Customer.new(name: "supervalu", password: "password")
 stephen.save()
 supervalu.save()
 

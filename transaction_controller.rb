@@ -18,7 +18,9 @@ class TransactionController
     # payerId = payerId[0]["$oid"]
     # Transaction.create(amount: amount, date: date, CrDr: credit, [customer_ids])
 
-    Transaction.create(amount: amount, CrDr: credit, customer_id: payer._id)
+    # Transaction.create(amount: amount, [customer_id: payer._id, payee._id ])
+    payer.transactions.create(amount: amount, CrDr: credit)
+    # this method creates a transaction instance anew everytime, ergo the two way association isn't easy
 
 
   end
