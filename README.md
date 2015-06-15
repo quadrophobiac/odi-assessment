@@ -32,6 +32,10 @@ wrapping code as a command line tool (https://github.com/davetron5000/methadone 
 
 ### Documentation of decisions taken
 
+####Date Range
+
+The specification stipulates that it is desired to see what the balance was on a given date. I have interpreted this as the program will ask for input of a date and return the balance effective on that date
+
 #### No GUI
 
 no gui was stipulated so I used ruby rather than employing a web framework because such frameworks would be superfluous here. However were this code to be implemented on a live application then better security for the log in would be required

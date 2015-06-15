@@ -30,7 +30,13 @@ mary.save()
 Banking = TransactionController.new()
 
 # make some payments
-
+Banking.transfer(supervalu, stephen, 480.00, Date.new(2015, 04, 30))
+Banking.transfer(stephen, supervalu, 55.00, Date.new(2015, 04, 30))
+Banking.transfer(mary, stephen, 45.00, Date.new(2015, 05, 03))
+Banking.transfer(mary, stephen, 5.00, Date.new(2015, 05, 6))
+Banking.transfer(stephen, mary, 480.00, Date.new(2015, 05, 9))
+Banking.transfer(stephen, mary, 420.00, Date.new(2015, 04, 9))
+Banking.transfer(mary, supervalu, 46.00, Date.new(2015, 05, 2))
 Banking.transfer(stephen, supervalu, 205.00, Date.new(2015, 05, 31))
 Banking.transfer(supervalu, stephen, 15.00, Date.new(2015, 06, 03))
 Banking.transfer(stephen, stephen, 25.00, Date.new(2015, 06, 6))

@@ -12,7 +12,6 @@ class Customer
     dr = gross - cr
     crBal = cr.inject(:+) # enumerate the sum of vals
     drBal = dr.inject(:+) # enumerate the sum of vals
-    puts("debit = #{drBal} and credit = #{crBal}")
     if drBal > crBal
       self.balance = (drBal - crBal)*-1
     else
