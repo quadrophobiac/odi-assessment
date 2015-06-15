@@ -1,0 +1,6 @@
+development:
+  sessions:
+    default:
+      database: odi-trial
+      hosts:
+        - localhost:27017
