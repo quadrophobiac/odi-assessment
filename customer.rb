@@ -1,5 +1,4 @@
 class Customer
-
   attr_accessor :balance
 
   include Mongoid::Document
@@ -10,11 +9,14 @@ class Customer
   def getBalance()
     gross = self.transactions.distinct(:amount) # all transactions
     cr = self.transactions.where(recipient: self.name).distinct(:amount) # any transactions to 'self'
-    if cr.count > gross.count # makes assumption that more entries is instructive, might not be the case
-      self.balance = cr - gross
+    dr = gross - cr
+    crBal = cr.inject(:+) # enumerate the sum of vals
+    drBal = dr.inject(:+) # enumerate the sum of vals
+    print("debit = #{drBal} and credit = #{crBal}")
+    if drBal > crBal
+      self.balance = (drBal - crBal)*-1
+    else
+      self.balance = crBal - drBal
     end
-    self.balance = ;
-
   end
-
 end
