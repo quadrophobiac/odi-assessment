@@ -6,7 +6,7 @@ Mongoid::Config.load!('./mongoid.yml', :development)
 class TransactionController
 
   def transfer(payer, payee, amount, date, credit)
-    # e.g. String "stephen", amount as float, and date in someformat, date must be in YYYY, MM DD
+    # e.g. String "payee/payer", amount as float, and date in someformat, date must be in YYYY, MM DD
 
     date = Date.new(date)
 
