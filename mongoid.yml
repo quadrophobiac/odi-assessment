@@ -1,6 +1,6 @@
 development:
   sessions:
     default:
-      database: odi-interview-N2N
+      database: odi-interview
       hosts:
         - localhost:27017

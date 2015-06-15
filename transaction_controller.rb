@@ -5,7 +5,7 @@ Mongoid::Config.load!('./mongoid.yml', :development)
 
 class TransactionController
 
-  def transfer(payer, payee, amount)
+  def transfer(payer, payee, amount, date)
     # e.g. Customer Objects payer & payee,
     # amount as float,
     # and date in as date object, date must be in YYYY, MM DD

@@ -22,10 +22,18 @@ require './transaction_controller'
 # if not exists ...
 stephen = Customer.new(name: "stephen", password: "password")
 supervalu = Customer.new(name: "supervalu", password: "password")
+mary = Customer.new(name: "mary", password: "password")
 stephen.save()
 supervalu.save()
+mary.save()
+
+Banking = TransactionController.new()
 
 # make some payments
 
-# stephens payments
-transfer()
+Banking.transfer(stephen, supervalu, 205.00, Date.new(2015, 05, 31))
+Banking.transfer(supervalu, stephen, 15.00, Date.new(2015, 06, 03))
+Banking.transfer(stephen, stephen, 25.00, Date.new(2015, 06, 6))
+Banking.transfer(stephen, stephen, 480.00, Date.new(2015, 06, 8))
+Banking.transfer(stephen, mary, 420.00, Date.new(2015, 06, 9))
+Banking.transfer(mary, supervalu, 46.00, Date.new(2015, 06, 2))
