@@ -17,3 +17,6 @@ search by date (in human readable format on the command line) – error catching
 set of dummy transactions – in what type of database to store this data?
 Storing it in a JSON file is the easiest  
 I do not have experience of building transaction software, so to get a sense of what format to store this data in I did some research. It seemed that Magento, Paypal and Mastercard eCommerce APIs were built with JSON objects in mind.  
+
+
+fin
