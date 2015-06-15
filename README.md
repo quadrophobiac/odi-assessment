@@ -27,10 +27,14 @@ set of dummy transactions – in what type of database to store this data?
 ### Unimplemented Features
 
 Login  
-wrapping code as a command line tool (https://github.com/davetron5000/methadone  http://whatisthor.com
-
+wrapping code as a command line tool (https://github.com/davetron5000/methadone  http://whatisthor.com  
+**^~> the log in and Auth features would solve the date range balance interrogation function quite gracefully**
 
 ### Documentation of decisions taken
+
+####Balances
+
+This decision took the longest but it eventually reconciled to constructing balance queries with ledger references to self as the filtering criteria. IE when a transaction is recorded only the payee is logged. If the payee matches the name of the Customer Class then it is inferred as a credit by the software
 
 ####Date Range
 
@@ -56,9 +60,3 @@ By utilising MongoId as a wrapper for a local MongoDB I gained access to the ODM
 
 AS it transpired I woefully misjudged the utility of Mongo for the second criteria http://www.rubydoc.info/github/mongoid/mongoid/Mongoid/Extensions/Date/ClassMethods  
 
-##### Important Changelogs to Note in that Regard
-
-If I assign the transactions a Dr/Cr boolean for the sake of expediency is there any point persisting with using a many-to-many in the MongoDB https://github.com/quadrophobiac/odi-assessment/commit/d2bda9c2182d74274c4e65db2e6a0da5911b4bf4
-
-
-fin
