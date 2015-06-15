@@ -20,13 +20,14 @@ class TransactionController
 
     # usrId = Customer.where(name: payee).find(_id)
     # allTransactions = Transactions.usrId
-    # iterate over the Cr and Dr of each
+    # iterate over array, calculating the Cr and Dr of each
+    # i.e. if (CrDr): sum += Transaction.amount() else: sum -= Transaction.amount(0)
 
   end
 
   def getBalance(username, date)
 
-    
+
 
   end
 end

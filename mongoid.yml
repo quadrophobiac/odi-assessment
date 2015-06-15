@@ -1,6 +1,6 @@
 development:
   sessions:
     default:
-      database: odi-trial
+      database: odi-interview
       hosts:
         - localhost:27017
