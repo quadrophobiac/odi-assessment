@@ -5,17 +5,21 @@ Mongoid::Config.load!('./mongoid.yml', :development)
 
 class TransactionController
 
-  def transfer(payer, payee, amount, date, credit)
+  def transfer(payer, payee, amount, credit)
     # e.g. String "payee/payer", amount as float, and date in someformat, date must be in YYYY, MM DD
+    # alternative - pass an object as reference
 
-    date = Date.new(date)
+    # date = Date.new(date)
 
     # # psuedocode for now
-    payeeId = Customer.where(name: payee).distinct(:_id).as_json
-    payeeId = payeeId[0]["$oid"]
-    payerId = Customer.where(name: payer).distinct(:_id).as_json
-    payerId = payerId[0]["$oid"]
+    # payeeId = Customer.where(name: payee).distinct(:_id).as_json
+    # payeeId = payeeId[0]["$oid"]
+    # payerId = Customer.where(name: payer).distinct(:_id).as_json
+    # payerId = payerId[0]["$oid"]
     # Transaction.create(amount: amount, date: date, CrDr: credit, [customer_ids])
+
+    Transaction.create(amount: amount, CrDr: credit, customer_id: payer._id)
+
 
   end
 

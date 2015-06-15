@@ -4,5 +4,5 @@ class Transaction
   field :amount, type: Float
   field :date, type: Date
   field :CrDr, type: Boolean
-  belongs_to :customer
+  has_and_belongs_to_many :customers
 end

@@ -6,6 +6,7 @@ require 'mongoid'
 Mongoid::Config.load!('./mongoid.yml', :development)
 require './customer'
 require './transaction'
+require './transaction_controller'
 
 # register loop
 
@@ -17,3 +18,14 @@ require './transaction'
 
 # login loop
 
+# create some accounts
+
+stephen = new Customer(name: "stephen", password: "password")
+supervalu = new Customer(name: "supervalu", password: "password")
+stephen.save()
+supervalu.save()
+
+# make some payments
+
+# stephens payments
+transfer()
