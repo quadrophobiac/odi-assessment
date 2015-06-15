@@ -20,7 +20,18 @@ overdraft is possible
 search by date (in human readable format on the command line) – error catching (i.e. use this to catch edge cases), returning a digit
 set of dummy transactions – in what type of database to store this data?
 Storing it in a JSON file is the easiest  
-I do not have experience of building transaction software, so to get a sense of what format to store this data in I did some research. It seemed that Magento, Paypal and Mastercard eCommerce APIs were built with JSON objects in mind.  
+
+### Documentation of decisions taken
+
+####Choice of data persistence
+
+I do not have experience of building transaction software, so to get a sense of what format to store this data in I did some research. It seemed that Magento, Paypal and Mastercard eCommerce APIs were built with JSON objects in mind. As such I chose to use a **document based database** rather than a relational database
+
+####Modelling the classes
+
+By utilising MongoId as a wrapper for a local MongoDB I gained access to the ODM mapping methods which were employed to  
+* expedite the relations between the client and transactions classes and persistence of data
+* make the querying of the date (stored as YYYY-MM-DD in the specifications) and presentation of the matching data entries legible in human readable format with a minimum of hassle
 
 
 fin
