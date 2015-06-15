@@ -14,20 +14,10 @@ class TransactionController
     exchange  = Transaction.new(amount: amount, recipient: payee.name)
     exchange.customers.push(payer)
     if payer._id != payee._id then
+      print("noting that transfer #{exchange._id} was noted as going from #{payer.name}")
       exchange.customers.push(payee)
     end
     exchange.save()
-
-
-  end
-
-  def getBalance(username)
-    # pseudocode
-
-    # usrId = Customer.where(name: payee).find(_id)
-    # allTransactions = Transactions.usrId
-    # iterate over array, calculating the Cr and Dr of each
-    # i.e. if (CrDr): sum += Transaction.amount() else: sum -= Transaction.amount(0)
 
   end
 
