@@ -19,9 +19,10 @@ class TransactionController
 
   def getBalance(username, year, month, day)
     # aim of this is what is the balance on a given date
-
+    chosenDate = Date.new(year, month, day)
     #establish date span
-    Transaction.between(date: (Transaction.first.date..ChosenDate)).count
-    # transaction.first catches the first transaction, not the most chronologically distant
+    Transaction.between(date: (Transaction.first.date..chosenDate)).count
+    # transaction.first catches the first transaction, not the most chronologically distant, also not inclusive
+    # inclusivity problem I'm encountering is a result of time feature being accurate to the hour of the ranges compared
   end
 end
