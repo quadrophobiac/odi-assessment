@@ -12,7 +12,7 @@ class TransactionController
     exchange  = Transaction.new(amount: amount, recipient: payee.name)
     exchange.customers.push(payer)
     if payer._id != payee._id then
-      print("noting that transfer #{exchange._id} was noted as going from #{payer.name}")
+      puts("noting that transfer #{exchange._id} was noted as going from #{payer.name}")
       exchange.customers.push(payee)
     end
     exchange.save()

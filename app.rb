@@ -37,3 +37,7 @@ Banking.transfer(stephen, stephen, 25.00, Date.new(2015, 06, 6))
 Banking.transfer(stephen, stephen, 480.00, Date.new(2015, 06, 8))
 Banking.transfer(stephen, mary, 420.00, Date.new(2015, 06, 9))
 Banking.transfer(mary, supervalu, 46.00, Date.new(2015, 06, 2))
+
+puts("Mary's balance is #{mary.getBalance}")
+puts("Stephen's balance is #{stephen.getBalance}")
+puts("Supervalu balance is #{supervalu.getBalance}")
