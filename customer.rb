@@ -2,7 +2,7 @@ class Customer
 
   include Mongoid::Document
   require './transaction'
-  has_many :transactions
+  has_and_belongs_to_many :transactions
   field :name, type: String
   field :password, type: String
 
