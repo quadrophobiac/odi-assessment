@@ -16,10 +16,17 @@ class TransactionController
   end
 
   def getBalance(username)
+    pseudocode
+
+    # usrId = Customer.where(name: payee).find(_id)
+    # allTransactions = Transactions.usrId
+    # iterate over the Cr and Dr of each
 
   end
 
   def getBalance(username, date)
+
+    
 
   end
 end
