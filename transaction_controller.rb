@@ -7,7 +7,7 @@ class TransactionController
 
   def transfer(payer, payee, amount, date, credit)
     # e.g. String "payee/payer", amount as float, and date in someformat, date must be in YYYY, MM DD
-
+    # or use appropriate ODM mapping
     date = Date.new(date)
 
     # # psuedocode for now
@@ -16,6 +16,7 @@ class TransactionController
     payerId = Customer.where(name: payer).distinct(:_id).as_json
     payerId = payerId[0]["$oid"]
     # Transaction.create(amount: amount, date: date, CrDr: credit, [customer_ids])
+    # Transaction.create(amount: amount, CrDr: credit, customer_id: payer._id)
 
   end
 

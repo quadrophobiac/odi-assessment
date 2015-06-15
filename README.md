@@ -1,6 +1,8 @@
 ## ODI Test Code Assignment
 ===============================
 
+There are two branches to this - the best way I could resolve for myself whether one to many or many to many relationships fitted was to do some exploratory computing of the data
+
 ###Installation
 
 This code avails of a mongoDB database in its development  
