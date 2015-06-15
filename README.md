@@ -33,5 +33,9 @@ By utilising MongoId as a wrapper for a local MongoDB I gained access to the ODM
 * expedite the relations between the client and transactions classes and persistence of data
 * make the querying of the date (stored as YYYY-MM-DD in the specifications) and presentation of the matching data entries legible in human readable format with a minimum of hassle
 
+#### Important Changelogs to Note in that Regard
+
+If I assign the transactions a Dr/Cr boolean for the sake of expediency is there any point persisting with using a many-to-many in the MongoDB https://github.com/quadrophobiac/odi-assessment/commit/d2bda9c2182d74274c4e65db2e6a0da5911b4bf4
+
 
 fin
