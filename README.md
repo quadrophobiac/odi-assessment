@@ -1,32 +1,28 @@
 ## ODI Test Code Assignment
 ===============================
 
-There are two branches to this - the best way I could resolve for myself whether one to many or many to many relationships fitted was to do some exploratory computing of the data
+Branches now merged
+
+###Personal Reflections
+
+I made a lot of this harder on myself than I needed to and it's been a chastening lesson  
+Rather than use MongoDB I should have implemented it with a relational database or flat JSON dummy data files instead, at least to begin with  
+The remaining unimplemented features are currently stalled by fact that I need to understand how to return a MongoDB query as a 'temporary collection'  
+A log in/authentication feature (that returns a session linked to a Customer Class instantiation) would also greatly aid the outstanding 'balanceOnDate' method - as currently the database is regenerated each time the script runs. **This is an area which has been complicated by my choice of using full ODM**  
 
 ###Installation
 
 This code avails of a mongoDB database in its development  
-I should have attempted it with a relational database instead  
 
-###Requirements
-
-both people and organisations – as strings  
-**generic client class**:  
-    attributes = name, password
-    methods = transfer(payee), 
-    getBalance() [printToScreen in ledger format] balance as double
-**transaction class**  
-    belongs to many clients?
-    or 2 types of transaction (dr and cr)  
-log in and all attendant security (caveat in commit comment that a supermarket would require better security)??  
-overdraft is possible  
-search by date (in human readable format on the command line) – error catching (i.e. use this to catch edge cases), returning a digit  
-set of dummy transactions – in what type of database to store this data?  
-- Storing it in a JSON file is the easiest  
 
 ### Unimplemented Features
 
+#### Specified
 Login  
+Balance as appropriate to an inputted date  
+Implicit to both of the above is some form of REPL command line interface
+
+#### Intimated
 wrapping code as a command line tool (https://github.com/davetron5000/methadone  http://whatisthor.com  
 **^~> the log in and Auth features would solve the date range balance interrogation function quite gracefully**
 
@@ -60,3 +56,18 @@ By utilising MongoId as a wrapper for a local MongoDB I gained access to the ODM
 
 AS it transpired I woefully misjudged the utility of Mongo for the second criteria http://www.rubydoc.info/github/mongoid/mongoid/Mongoid/Extensions/Date/ClassMethods  
 
+###Requirements
+
+both people and organisations – as strings  
+**generic client class**:  
+    attributes = name, password
+    methods = transfer(payee), 
+    getBalance() [printToScreen in ledger format] balance as double
+**transaction class**  
+    belongs to many clients?
+    or 2 types of transaction (dr and cr)  
+log in and all attendant security (caveat in commit comment that a supermarket would require better security)??  
+overdraft is possible  
+search by date (in human readable format on the command line) – error catching (i.e. use this to catch edge cases), returning a digit  
+set of dummy transactions – in what type of database to store this data?  
+- Storing it in a JSON file is the easiest  
